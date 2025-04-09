@@ -1,0 +1,130 @@
+:root {
+    /* Degradê azul */
+    --azul-escuro: #4d6477;
+    --azul-claro: #2a3c4e;
+  
+    /* Degradê Cinza */
+    --cinza: #999999;
+    --branco: #ffffff;
+  
+    /* Preto e Azul adicional */
+    --preto: #000000;
+    --azul: #334d61;
+
+    --amarelo: #fef806;
+    --amareloclaro: #fbf96d;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--amarelo);
+    color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    font-size: 1em;
+    margin-bottom: 2vh;
+  }
+  
+  .player {
+    padding: 6px 12px;
+    border-radius: 20px;
+    background-color: var(--amareloclaro);
+    color: var(--preto);
+    font-weight: 500;
+    font-size: 0.9em;
+    border: 1px solid var(--preto);
+    transition: all 0.3s ease;
+  }
+  
+  .player.active {
+    background-color: var(--branco);
+    color: var(--preto);
+    border: 1px solid var(--branco);
+  }
+  
+  
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2vw;
+    width: 75vw;
+    max-width: 900px;
+    justify-items: center;
+    padding: 2vw;
+    background-color: var(--branco);
+    border-radius: 12px;
+  }
+  
+  
+  
+  
+  .card {
+    position: relative;
+    width: 100px;
+    height: 150px;
+    background-color: var(--cinza); 
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    color: var(--preto);
+    user-select: none;
+    transition: transform 0.3s;
+    overflow: hidden;
+  }
+  
+  
+  
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("verso.png"); 
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    transition: opacity 0.3s;
+    z-index: 2;
+  }
+  
+  
+  .card.flipped::before,
+  .card.matched::before {
+    opacity: 0;
+  }
+  
+  .card.matched {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    pointer-events: none;
+  }
+  
+  .logo-jogo {
+    width: 600px;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+  }
+  body {
+    padding-top: 2vh;
+  }
+    
